@@ -31,8 +31,7 @@ RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-avail
     && composer install --no-dev --optimize-autoloader --no-scripts \
     && npm install \
     && npm run build \
-    && php artisan key:generate --force \
-    && php artisan package:discover --ansi
+    && php artisan key:generate --force
 
 EXPOSE 80
 
